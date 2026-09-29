@@ -1,0 +1,714 @@
+/* Basic reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #292c29;
+            background: #f4f2ed;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #dbc99e;
+        }
+
+        /* Main photograph */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: flex-end;
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.2),
+                    rgba(0, 0, 0, 0.65)
+                ),
+                url("home-photo.jpg") center/cover no-repeat;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 30px;
+            color: white;
+        }
+
+        .hero h1 {
+    max-width: 950px;
+    font-family: Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    font-weight: normal;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero p {
+    max-width: 650px;
+    margin-top: 22px;
+    font-size: 1.25rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+}
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            color: #262a26;
+            background: #dbc99e;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .button:hover {
+            background: white;
+        }
+
+        /* Introduction */
+        .introduction {
+            max-width: 900px;
+            margin: auto;
+            padding: 90px 30px;
+            text-align: center;
+        }
+
+        .introduction h2,
+        .featured h2 {
+            margin-bottom: 24px;
+            font-family: Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: normal;
+            color: #304238;
+        }
+
+        .introduction p {
+            font-size: 1.15rem;
+        }
+
+        /* Subject cards */
+        .featured {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 30px 100px;
+        }
+
+        .featured h2 {
+            text-align: center;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            overflow: hidden;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.04);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            color: #304238;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 16px;
+            color: #765b2c;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            padding: 45px 30px;
+            color: #e6e4df;
+            background: #25332c;
+            text-align: center;
+        }
+
+        footer a {
+            color: #dbc99e;
+        }
+
+        /* Phones and smaller screens */
+        @media (max-width: 750px) {
+            nav {
+                align-items: flex-start;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-direction: column;
+                text-align: right;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Interior page navigation */
+.page-header {
+    position: relative;
+    background: #f4f2ed;
+    border-bottom: 1px solid rgba(48, 66, 56, 0.15);
+}
+
+.page-header .logo,
+.page-header nav a {
+    color: #304238;
+}
+
+.page-header nav a:hover,
+.page-header nav a.active {
+    color: #8a6424;
+}
+
+.page-header nav a.active {
+    border-bottom: 2px solid #8a6424;
+    padding-bottom: 4px;
+}
+
+/* Interior page introduction */
+.page-introduction {
+    max-width: 1000px;
+    margin: auto;
+    padding: 100px 30px 70px;
+    text-align: center;
+}
+
+.section-label {
+    margin-bottom: 12px;
+    color: #8a6424;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.page-introduction h1 {
+    max-width: 850px;
+    margin: auto;
+    color: #304238;
+    font-family: Georgia, serif;
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    font-weight: normal;
+    line-height: 1.08;
+}
+
+.page-introduction > p:last-child {
+    max-width: 700px;
+    margin: 28px auto 0;
+    font-size: 1.15rem;
+}
+
+/* Photography gallery */
+.photo-gallery {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 25px;
+}
+
+.gallery-item {
+    margin: 0;
+}
+
+.gallery-item-wide {
+    grid-column: 1 / -1;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.gallery-item-wide img {
+    height: 600px;
+}
+
+.gallery-item figcaption {
+    padding-top: 14px;
+    color: #555;
+}
+
+.gallery-item figcaption span {
+    display: block;
+    margin-bottom: 2px;
+    color: #304238;
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+}
+
+/* Photography gallery on phones */
+@media (max-width: 750px) {
+    .page-introduction {
+        padding: 70px 25px 50px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        padding: 0 20px 70px;
+    }
+
+    .gallery-item-wide {
+        grid-column: auto;
+    }
+
+    .gallery-item img,
+    .gallery-item-wide img {
+        height: 350px;
+    }
+}
+/* Clickable gallery photographs */
+.gallery-item img {
+    cursor: zoom-in;
+}
+
+/* Full-screen photograph viewer */
+.lightbox {
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    max-height: none;
+    padding: 30px;
+    border: 0;
+    background: rgba(15, 20, 17, 0.96);
+    color: white;
+    text-align: center;
+}
+
+.lightbox[open] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox img {
+    display: block;
+    max-width: 94vw;
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.lightbox p {
+    margin-top: 15px;
+    color: #e8e1cf;
+    font-size: 1rem;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 18px;
+    right: 28px;
+    border: 0;
+    color: white;
+    background: transparent;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    color: #dbc99e;
+}
+.flickr-link {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.flickr-link p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.flickr-link a {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #263a32;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.flickr-link a:hover {
+    background-color: #3b554a;
+}
+.logo {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo:hover {
+    opacity: 0.65;
+}
+/* =========================
+   CRAFTSMANSHIP PAGE
+   ========================= */
+
+.craft-hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10rem 2rem 6rem;
+    text-align: center;
+}
+
+.craft-hero .eyebrow {
+    margin-bottom: 1.5rem;
+    color: #9a6a3a;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+.craft-hero h1 {
+    margin: 0 0 1.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    color: #20352d;
+}
+
+.craft-introduction {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4d554f;
+}
+
+.craft-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 7rem;
+}
+
+.craft-project {
+    padding: 4rem;
+    background-color: #e8e3d8;
+}
+
+.craft-project-text {
+    max-width: 680px;
+}
+
+.craft-project .eyebrow {
+    margin-bottom: 1rem;
+    color: #9a6a3a;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+.craft-project h2 {
+    margin: 0 0 1.25rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #20352d;
+}
+
+.craft-project p {
+    margin: 0;
+    line-height: 1.8;
+    color: #4d554f;
+}
+
+@media (max-width: 700px) {
+    .craft-hero {
+        padding: 8rem 1.25rem 4rem;
+    }
+
+    .craft-content {
+        padding: 0 1.25rem 4rem;
+    }
+
+    .craft-project {
+        padding: 2.25rem 1.5rem;
+    }
+}
+.craftsmanship-page header nav a {
+    color: #20352d;
+}
+
+.craftsmanship-page header nav ul li a.active {
+    color: #9a6a3a;
+}
+/* Craftsmanship navigation details */
+
+.craftsmanship-page header {
+    border-bottom: 1px solid #d8d2c8;
+}
+
+.craftsmanship-page header nav ul li a.active {
+    color: #9a6a3a;
+    border-bottom: 1px solid #9a6a3a;
+    padding-bottom: 0.35rem;
+}
+.craft-project {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.craft-project-image {
+    display: block;
+}
+
+.craft-project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+}
+
+.project-caption {
+    margin-top: 2rem !important;
+    padding-top: 1.25rem;
+    border-top: 1px solid #c9c1b4;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+@media (max-width: 800px) {
+    .craft-project {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .craft-project-image img {
+        min-height: auto;
+    }
+}
+.craft-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+    margin-top: 5rem;
+}
+
+.craft-gallery-item {
+    margin: 0;
+}
+
+.craft-gallery-item a {
+    display: block;
+    overflow: hidden;
+}
+
+.craft-gallery-item img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.craft-gallery-item a:hover img {
+    transform: scale(1.02);
+}
+
+.craft-gallery-item figcaption {
+    padding-top: 1rem;
+}
+
+.craft-gallery-item strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #20352d;
+}
+
+.craft-gallery-item span {
+    display: block;
+    color: #606861;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+    .craft-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .craft-gallery-item img {
+        height: auto;
+    }
+}
+/* About page */
+.about-heading {
+    padding-bottom: 45px;
+}
+
+.about-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 30px 110px;
+}
+
+.about-content h2 {
+    margin-bottom: 24px;
+    color: #304238;
+    font-family: Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: normal;
+}
+
+.about-content p {
+    margin-bottom: 24px;
+    font-size: 1.12rem;
+    line-height: 1.8;
+}
+/* Heritage page */
+.heritage-feature {
+    max-width: 1200px;
+    margin: 0 auto 90px;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.heritage-feature img {
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+}
+
+.heritage-feature-text h2,
+.heritage-project h2 {
+    margin-bottom: 20px;
+    color: #304238;
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.heritage-feature-text p:not(.section-label),
+.heritage-project p:not(.section-label) {
+    margin-bottom: 18px;
+    line-height: 1.75;
+}
+
+.heritage-projects {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 110px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.heritage-project {
+    padding: 35px;
+    background: white;
+    border-top: 4px solid #8a6424;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+@media (max-width: 850px) {
+    .heritage-feature,
+    .heritage-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .heritage-feature {
+        gap: 35px;
+    }
+
+    .heritage-feature img {
+        height: 400px;
+    }
+}

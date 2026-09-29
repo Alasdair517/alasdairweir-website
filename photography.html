@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Photography | Alasdair Weir</title>
+
+    <meta name="description"
+          content="Landscape, architectural and detail photography by Alasdair Weir.">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <nav>
+            <a class="logo" href="index.html">Alasdair Weir</a>
+
+            <ul>
+                <li><a class="active" href="photography.html">Photography</a></li>
+                <li><a href="craftsmanship.html">Craftsmanship</a></li>
+                <li><a href="heritage.html">Heritage</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-introduction">
+            <p class="section-label">Photography</p>
+
+            <h1>Landscapes, buildings and closer observations.</h1>
+
+            <p>
+                Photographs collected while travelling around Scotland,
+                from open landscapes and historic buildings to the smaller
+                textures and details found along the way.
+            </p>
+        </section>
+
+        <section class="photo-gallery">
+
+            <figure class="gallery-item gallery-item-wide">
+                <img src="home-photo.jpg"
+                     alt="Morning mist over farmland outside Keith, looking south towards Leith Farm">
+
+                <figcaption>
+                    <span>Outside Keith</span>
+                    Looking south towards Leith Farm
+                </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="photo-02.jpg"
+                     alt="Scottish landscape photograph">
+
+                <figcaption>
+                    <span>Loch Katrine</span>
+                    SS Sir Walter Scott on Loch Katrine
+                </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="photo-03.jpg"
+                     alt="Detail of a historic building">
+
+                <figcaption>
+                    <span>Fort Augustus</span>
+                    Looking north-east along Loch Ness
+                </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="photo-04.jpg"
+                     alt="Scottish landscape photograph">
+
+                <figcaption>
+                    <span>Firth of Clyde</span>
+                    Looking across Largs and Great Cumbrae towards Bute and Dunoon
+                </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="photo-05.jpg"
+                     alt="Architectural detail">
+
+                <figcaption>
+                    <span>Loup of Fintry</span>
+                    Long-exposure study of the waterfall
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <section class="flickr-link">
+    <p>More of my photography can be found on Flickr.</p>
+
+    <a href="https://www.flickr.com/photos/204784159@N03/"
+       target="_blank"
+       rel="noopener noreferrer">
+        Visit my Flickr photostream
+    </a>
+</section>
+
+    </main>
+
+    <footer>
+        <p>
+            © 2026 Alasdair Weir ·
+            <a href="mailto:hello@example.co.uk">Get in touch</a>
+        </p>
+    </footer>
+<dialog class="lightbox" id="lightbox">
+    <button class="lightbox-close"
+            type="button"
+            aria-label="Close photograph">
+        ×
+    </button>
+
+    <img id="lightbox-image" src="" alt="">
+
+    <p id="lightbox-caption"></p>
+</dialog>
+
+<script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const closeButton = document.querySelector(".lightbox-close");
+    const galleryImages = document.querySelectorAll(".gallery-item img");
+
+    galleryImages.forEach(image => {
+        image.addEventListener("click", () => {
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+
+            const caption = image
+                .closest(".gallery-item")
+                .querySelector("figcaption");
+
+            lightboxCaption.textContent =
+                caption ? caption.innerText.replace("\n", " — ") : image.alt;
+
+            lightbox.showModal();
+        });
+    });
+
+    closeButton.addEventListener("click", () => {
+        lightbox.close();
+    });
+
+    lightbox.addEventListener("click", event => {
+        if (event.target === lightbox) {
+            lightbox.close();
+        }
+    });
+</script>
+
+</body>
+</html>
